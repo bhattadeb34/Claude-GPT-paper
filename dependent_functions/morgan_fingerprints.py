@@ -1,5 +1,5 @@
 # abstract base classes
-from components.workflow import Workflow, ManyToOneWorkflow
+from workflow import Workflow, ManyToOneWorkflow
 # requirements for this instance
 import joblib
 import json
