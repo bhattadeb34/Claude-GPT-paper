@@ -13,8 +13,8 @@ from config import data_home,fact_dropbox_path
 
 sys.path.append(fact_dropbox_path)
 
-from components.morgan_fingerprints import TransformMorganFingerprints
-from components.morgan_fingerprints import WriteAllMorganFingerprints, TransformMorganFingerprints
+from morgan_fingerprints import TransformMorganFingerprints
+from morgan_fingerprints import WriteAllMorganFingerprints, TransformMorganFingerprints
 
 def transform_new_molecules(smiles_list, radius, common_keys_path):
     """
