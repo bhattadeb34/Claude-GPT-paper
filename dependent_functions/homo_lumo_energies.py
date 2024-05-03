@@ -359,7 +359,7 @@ def process_and_analyze_homo_lumo_energy_data(data_home, overall_results_filenam
     )
     
     return {
-        'folder_path': folder_path,
+        #'folder_path': folder_path,
         'energy_differences_deviation_by_prompt': energy_differences_deviation_by_prompt,
         'filtered_prompt_mapping': energy_differences_filtered_prompt_mapping,
         'smiles_latent_map': energy_differences_smiles_latent_map
