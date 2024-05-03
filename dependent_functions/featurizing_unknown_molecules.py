@@ -8,10 +8,11 @@ import sys
 import os
 
 # Import the data_home variable from config.py
-from config import data_home,fact_dropbox_path
+from config import data_home
 
 
-sys.path.append(fact_dropbox_path)
+path_to_dependent_functions=os.path.join(data_home, 'Claude-GPT-paper', 'dependent_functions')
+sys.path.append(path_to_dependent_functions)
 
 from morgan_fingerprints import TransformMorganFingerprints
 from morgan_fingerprints import WriteAllMorganFingerprints, TransformMorganFingerprints
