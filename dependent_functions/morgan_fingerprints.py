@@ -1,15 +1,24 @@
-# abstract base classes
-from workflow import Workflow, ManyToOneWorkflow
-# requirements for this instance
+
+# Import the data_home variable from config.py
+from config import data_home
+import os
+import sys
 import joblib
 import json
 import numpy as np
-import os
 import pandas as pd
 import rdkit as rdk
 import rdkit.Chem
 from modeling import MorganFeaturizer
 from sklearn import decomposition, preprocessing
+
+path_to_dependent_functions=os.path.join(data_home, 'Claude-GPT-paper', 'dependent_functions')
+sys.path.append(path_to_dependent_functions)
+
+
+# abstract base classes
+from workflow import Workflow, ManyToOneWorkflow
+# requirements for this instance
 
 
 class PretrainedMorganFingerprints(Workflow):
