@@ -7,3 +7,6 @@ dependent_functions has the dependent functions that are being used in the main 
 pm7_charge_results has the files necessary for plotting the HOMO-HOMO energy differences
 
 pm7_charge_calculation has the files with pm7 partial charges calculations (not being used for plotting, but were calculated)
+
+
+run GPT_modification_just_plots.ipynb for plotting. The drive needs not be mounted (that was included as I had the data stored there)
