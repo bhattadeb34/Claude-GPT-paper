@@ -4,3 +4,6 @@ claude_overall_results_A-H_2024-04-11_18-36-01.json, claude_overall_results_EDG_
 
 dependent_functions has the dependent functions that are being used in the main notebook GPT_modification_just_plots.ipynb
 
+pm7_charge_results has the files necessary for plotting the HOMO-HOMO energy differences
+
+pm7_charge_calculation has the files with pm7 partial charges calculations (not being used for plotting, but were calculated)
