@@ -231,7 +231,6 @@ def plot_homo_lumo_energy_differences_by_prompts(filtered_energy_diff_dict, EWG_
         plt.show()
 
 
-
 def plot_combined_homo_lumo_energy_differences(filtered_energy_diff_dict, EWG_energy_diff_dict, EDG_energy_diff_dict, filtered_mapping, EWG_mapping, EDG_mapping, figsize=(16, 8), condense_percentile=0.99, save_path=None):
     """
     Plots combined HOMO and LUMO energy differences by prompts.
@@ -283,7 +282,7 @@ def plot_combined_homo_lumo_energy_differences(filtered_energy_diff_dict, EWG_en
     # Determine y-limits based on specified percentile to exclude extreme outliers
     y_limit = df_energy_diff['Energy Difference'].quantile([1 - condense_percentile, condense_percentile]).abs().max()
 
-    for type_key in ['HOMO', 'LUMO']:
+    for type_key in ['HOMO']: #, 'LUMO']:
         plt.figure(figsize=figsize)
         ax = sns.boxplot(x='Prompt', y='Energy Difference', hue='Group', data=df_energy_diff[df_energy_diff['Type'] == type_key], palette=palette, order=plot_order)
         plt.xticks(fontsize=24)
@@ -309,5 +308,29 @@ def plot_combined_homo_lumo_energy_differences(filtered_energy_diff_dict, EWG_en
             plt.savefig(f"{save_path}_{type_key.lower()}.pdf", dpi=600, bbox_inches='tight')
         plt.show()
 
-
+    # for type_key in ['LUMO']:
+    #     plt.figure(figsize=figsize)
+    #     ax = sns.boxplot(x='Prompt', y='Energy Difference', hue='Group', data=df_energy_diff[df_energy_diff['Type'] == type_key], palette=palette, order=plot_order)
+    #     plt.xticks(fontsize=24)
+    #     plt.yticks(fontsize=24)
+    #     plt.xlabel('Prompt Identifier', fontsize=24)
+    #     #plt.ylabel(f'{type_key} Energy Difference (Parent-Generated) (EV)', fontsize=18)
+    #     plt.ylabel(f'{type_key} Energy Difference\n(Generated-Parent) (eV)', fontsize=24)
+    #     #plt.title(f'Combined Distribution of {type_key} Energy Differences by Prompt Strategy', fontsize=16)
+    #     # Make spines thicker for distance plot
+    #     for spine in ax.spines.values():
+    #         spine.set_linewidth(2)  # Change this value to adjust the thickness
+    #     # Draw a dashed line at y=0
+    #     plt.axhline(0, color='gold', linestyle='dashed', linewidth=4)
+    #     # Set y-limits to be symmetric around zero
+    #     plt.ylim(-y_limit, y_limit)
+    #
+    #     handles, labels = plt.gca().get_legend_handles_labels()
+    #     new_labels = [textwrap.fill(label, width=50) for label in labels]
+    #     #plt.legend(handles, new_labels, title='Groups', bbox_to_anchor=(1.02, 1), loc='upper left', fontsize=24, title_fontsize=24)
+    #     plt.legend(handles, new_labels, title='Groups', loc='best', fontsize=24, title_fontsize=24)
+    #     plt.tight_layout()
+    #     if save_path:
+    #         plt.savefig(f"{save_path}_{type_key.lower()}.pdf", dpi=600, bbox_inches='tight')
+    #     plt.show()
 
