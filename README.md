@@ -9,4 +9,6 @@ pm7_charge_results has the files necessary for plotting the HOMO-HOMO energy dif
 pm7_charge_calculation has the files with pm7 partial charges calculations (not being used for plotting, but were calculated)
 
 
-run GPT_modification_just_plots.ipynb for plotting. The drive needs not be mounted (that was included as I had the data stored there)
+run GPT_modification_just_plots.ipynb for plotting. Open it with Google Colab and run it by following the instructions in the notebook.
+
+
