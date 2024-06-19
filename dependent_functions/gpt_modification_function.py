@@ -50,11 +50,34 @@ def load_api_key(file_path, keyword):
         return None
 
 
-
+'''
+#previously implemented, before review
 def is_valid_molecule(smiles):
     """Checks if a SMILES string represents a valid molecule."""
     mol = Chem.MolFromSmiles(smiles)
     return mol is not None
+'''
+
+#suggestion from the reviewer to include other checks for validity, which was missing earlier
+def is_valid_molecule(smiles):
+    """
+    Checks if a SMILES string represents a valid molecule.
+    This includes converting the SMILES to a molecule object and performing sanitization.
+    Returns the molecule object if valid, otherwise None.
+    """
+    try:
+        # Convert SMILES to molecule object with sanitize=False
+        mol = Chem.MolFromSmiles(smiles, sanitize=False)
+        if mol is None:
+            return None
+
+        # Sanitize the molecule for validation
+        Chem.SanitizeMol(mol)
+
+        return mol
+    except:
+        return None
+
 
 
 def build_prompt(smiles, n, prompt):
